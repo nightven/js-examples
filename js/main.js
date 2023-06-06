@@ -242,3 +242,188 @@
 //   return array2;
 // }
 // console.log(getCommonArrays([1, 5, 7], [2, 4, 5, 7, 9]));
+
+/*
+ * Написати фразу за допомогою конкатенації та шаблонних рядків
+ * "Hello, my name is [name], I'm [age] years old and I like [hobby]", де квадратних дужках - змінні вставлені в рядок
+ */
+
+// const name = "Dan";
+// const age = 35;
+// const hobby = "swimming";
+// const message = `Hello, my name is ${name}, I'm ${age} years old and I like ${hobby}`;
+// console.log(message);
+// const message2 =
+//   "Hello, my name is " +
+//   name +
+//   ", I'm " +
+//   age +
+//   " years old and I like " +
+//   hobby;
+// console.log(message2);
+
+// Дано слово. Получите его последнюю букву. Если слово заканчивается на мягкий знак, то получите предпоследнюю букву.
+// const word = "Педаль";
+// if (word[word.length - 1] === "ь") {
+//   console.log(word[word.length - 2]);
+// }
+
+//! дз 2 . 9
+
+// function getExtremeElements(array) {
+//     return [array[0], array[array.length-1]];
+//    // Change code above this line
+//  }
+//  console.log(getExtremeElements([1, 2, 3, 4, 5]))
+
+//! дз 2 . 10
+
+// function splitMessage(message, delimiter) {
+//   let words;
+//   words = message.split(delimiter);
+
+//   return words;
+// }
+// console.log(splitMessage("Mango hurries to the train", " "));
+//! дз 2 . 10 var2
+// function splitMessage(message, delimiter) {
+//   // Change code below this line
+
+//   // Change code above this line
+//   return message.split(delimiter);
+// }
+// console.log(splitMessage("Mango hurries to the train", " "));
+//! дз 2 . 11
+// function calculateEngravingPrice(message, pricePerWord) {
+//   let result = message.split(` `);
+//    return result = result.length * pricePerWord;
+//   }
+//! дз 2 . 11 var 2
+// function calculateEngravingPrice(message, pricePerWord) {
+//   return message.split(` `).length * pricePerWord;
+// }
+// console.log(calculateEngravingPrice("Mango hurries to the train", 10));
+//! дз 2 . 12
+// function makeStringFromArray(array, delimiter) {
+//   let string;
+//   string = array.join(delimiter);
+
+//   return string;
+// }
+//! дз 2 . 13
+// function slugify(title) {
+//   let slug = title.toLowerCase().split(" ");
+//   slug = slug.join("-");
+
+//   return slug;
+// }
+// console.log(slugify("Arrays for begginers"));
+
+//! дз 2 . 13 var2
+
+// function slugify(title) {
+
+//   return title.toLowerCase().split(" ").join("-");
+// }
+// console.log(slugify("Mango hurries to the train"));
+
+//! дз 2 . 14
+
+// const fruits = ['apple', 'plum', 'pear', 'orange', 'banana'];
+// const firstTwoEls = fruits.slice(0, 2);
+// const nonExtremeEls = fruits.slice(1, fruits.length-1);
+// const lastThreeEls = fruits.slice(-3);
+//! дз 2 . 16
+
+// function makeArray(firstArray, secondArray, maxLength) {
+//   return firstArray.concat(secondArray).slice(0, maxLength);
+//   // Change code above this line
+// }
+// console.log(makeArray(["Mango", "Poly"], ["Ajax", "Chelsea"], 3));
+//! дз 2 . 18
+// function calculateTotal(number) {
+//   let total = 0;
+//   for (let i = 0; i <= number; i += 1) {
+//     total += i;
+//   }
+//   return total;
+// }
+// console.log(calculateTotal(7));
+//! дз 2 . 19
+
+// const fruits = ['apple', 'plum', 'pear', 'orange'];
+
+// for (let i = 0; i < fruits.length; i += 1) { // Change this line
+//   const fruit = fruits[i]; // Change this line
+//   console.log(fruit);
+// }
+
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   for (let i = 0; i < order.length; i += 1) {
+//     total += order[i];
+//   }
+//   return total;
+// }
+// console.log(calculateTotalPrice([12, 85, 37, 4]));
+
+//! дз 2 . 22
+// function coo(array) {
+//   let sum = 0;
+//   array.forEach((i) => (sum += i));
+//   return sum;
+// }
+// console.log(coo([2, 4]));
+//! дз 2 . 2
+// function calculateTotalPrice(order) {
+//   let total = 0;
+//   order.forEach((i) => (total += i));
+
+//   return total;
+// }
+// ! дз 2 21.
+// function findLongestWord(string) {
+//   let words = string.split(" ");
+//     for(let i = 0; i < words.length; i += 1) {
+//       if (words[0].length < words[i].length) {
+//         words.unshift(words[i])
+//       }
+//     }
+
+//   return words[0]
+
+// ! дз 2 21. var 2
+// function findLongestWord(string) {
+//   let words = string.split(" ");
+//   const sorted = words.sort((a, b) => a.length - b.length);
+//   return sorted[sorted.length - 1];
+// }
+// console.log(findLongestWord("The quick brown fox jumped over the lazy dog"));
+
+// ! дз 2 22. var 2
+// function createArrayOfNumbers(min, max) {
+//   const numbers = [];
+//   for (; min <= max; min += 1) {
+//     numbers.push(min);
+//   }
+//   return numbers;
+// }
+// console.log(createArrayOfNumbers(1, 3));
+// ! дз 2 23
+
+// function filterArray(numbers, value) {
+//   let newArrey = []
+// for( const number of numbers) {
+//   if (number > value ) {
+//     newArrey.push(number)
+//   }
+// }
+// return newArrey;
+
+//   // Change code above this line
+// }
+// ! дз 2 24
+// function checkFruit(fruit) {
+//   const fruits = ["apple", "plum", "pear", "orange"];
+//   return fruits.includes(fruit);
+// }
