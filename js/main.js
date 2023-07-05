@@ -427,3 +427,295 @@
 //   const fruits = ["apple", "plum", "pear", "orange"];
 //   return fruits.includes(fruit);
 // }
+// ! =========================================
+// Джейден Смит, сын Уилла Смита, является звездой таких фильмов, как «Каратэ-пацан» (2010) и «После Земли» (2013). Джейден также известен своей философией,
+//  которую он распространяет через Twitter . Когда он пишет в Твиттере, он известен тем, что почти всегда пишет каждое слово с большой буквы. Для простоты вам
+//  нужно будет писать каждое слово с заглавной буквы. Посмотрите, какими должны быть сокращения в приведенном ниже примере.
+// Ваша задача состоит в том, чтобы преобразовать строки в то, как они были бы написаны Джейденом Смитом. Строки являются настоящими цитатами Джейдена Смита, но
+// они не написаны с заглавной буквы так, как он их изначально напечатал.
+// Пример:
+// Not Jaden-Cased: "How can mirrors be real if our eyes aren't real"
+// Jaden-Cased:     "How Can Mirrors Be Real If Our Eyes Aren't Real"
+
+// const strToUpperCase = (str) => {
+//   const splitStr = str
+//     .split(" ")
+//     .reduce(
+//       (result, el) => result + " " + el.charAt(0).toUpperCase() + el.slice(1),
+//       []
+//     );
+//   return splitStr;
+// };
+
+// console.log(strToUpperCase("How can mirrors be real if our eyes aren't real"));
+// ! =============================================
+//*На этот раз ни истории, ни теории. В приведенных ниже примерах показано, как написать функцию accum:
+//* Примеры:
+//*accum("abcd") -> "A-Bb-Ccc-Dddd"
+//* accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+//* accum("cwAt") -> "C-Ww-Aaa-Tttt"
+//* Параметр accum представляет собой строку, состоящую только из букв из a..zи A..Z.?
+
+// function accum(str) {
+//   const arrStr = str.split("");
+//   for (let i = 0; i < arrStr.length; i++) {
+//     let str = arrStr[i].toUpperCase();
+//     for (let y = 0; y < i; y++) {
+//       str += arrStr[i];
+//     }
+//     arrStr[i] = str;
+//   }
+//   return arrStr.join("-");
+// }
+// console.log(accum("qwerty"));
+
+// function accum(s) {
+//   return s.split('').map((c, i) => (c.toUpperCase() + c.toLowerCase().repeat(i))).join('-');
+// }
+//! ============================================
+// function disemvowel(str) {
+//   const arr = ["a", "e", "i", "o", "u", "y"];
+//   const arr1 = str.split("");
+//   const result = [];
+//   for (let i = 0; i < arr1.length; i += 1) {
+//     if (!arr.includes(arr1[i].toLowerCase())) {
+//       result.push(arr1[i]);
+//     }
+//   }
+
+//   return result.join("");
+// }
+// console.log(
+//   disemvowel("No offense but,\nYour writing is among the worst I've ever read")
+// );
+// ! ==================================================
+//1 (map()) Потрібно отримати масив імен студентів та записати їх великими літерами.
+// let studentRecords = [
+//   { name: "John", id: 123, marks: 98 },
+//   { name: "Baba", id: 101, marks: 23 },
+//   { name: "yaga", id: 200, marks: 45 },
+//   { name: "Wick", id: 115, marks: 75 },
+// ];
+// const studentName = studentRecords.map((el) => el.name.toUpperCase());
+// const studentName = studentRecords.map(function (el) {
+//   return el.name.toUpperCase();
+// });
+// console.log(studentName);
+// ! ==================================================
+// const User = function ({ userName, age, numbersOfPost }) {
+//     this.userName = userName;
+//     this.age = age;
+//     this.numbersOfPost = numbersOfPost;
+//     //  this.getInfo = function () {
+//     //     return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`;
+//     //   };
+//   };
+
+//   User.prototype.getInfo = function () {
+//     return `Користувачеві ${this.userName} ${this.age} років і в нього ${this.numbersOfPost} публікацій.`;
+//   };
+//   const user = new User({ userName: "Mango", age: 12, numbersOfPost: 45 });
+//   console.log(user);
+//   const user2 = new User({ userName: "Tomat", age: 42, numbersOfPost: 33 });
+//   console.log(user2.getInfo());
+// ! =========================
+// Напиши функцію конструктор Storage, який створює об'єкти
+//Для управління складом товарів.
+//При виклику отримуватиме один агрумент - початковий масив товарів,
+//і записувати їх у властивість items.
+//Додай методи класу:
+//getItems() - повертайте масив товарів
+//addItems(item) - отримує новий товар та додає його до поточних
+//removeItem(item) - отримує товар і, якщо він є, видаляє його з поточних
+//++++++++++++++++++++++++++++++++++++++++++
+// const storage = new Storage(["apple", "mango"]);
+// console.log(storage);
+// storage.addItems("banana")
+// storage.removeItem("apple");
+// console.log(storage);
+
+// class Storage {
+//   constructor(arr) {
+//     this.arr = arr;
+//   }
+//   getItems() {
+//     return this.arr;
+//   }
+//   addItems(newItem) {
+//     this.arr.push(newItem);
+//   }
+//   removeItem(item) {
+//     this.arr = this.arr.filter((el) => el !== item);
+//   }
+// }
+// const storage = new Storage(["apple", "mango"]);
+// console.log(storage);
+// storage.addItems("banana");
+// storage.removeItem("apple");
+// console.log(storage);
+// ! ==================================================
+// Привет всем! Задачка попалась: надо написать функцию, которая получает string (из букв),
+//  возвращает то же string только из цифр, а цифра совпадает с позицией буквы в алфавите. тест:
+// alphabetPosition("The sunset sets at twelve o' clock.")
+// должно вернуть "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11"
+// function alphabetPosition(str) {
+//   let alphabet = "abcdefghijklmnopqrstuvwxyz";
+//   alphabet = alphabet.split("");
+//   const item = str.toLowerCase().split(" ").join("").split("");
+//   const result = item.map((el) => {
+//     return alphabet.indexOf(el) + 1;
+//   });
+//   return result.filter((el) => el !== 0).join(" ");
+// }
+// console.log(alphabetPosition("The sunset sets at twelve o' clock."));
+//! ================================================
+// function findOdd(A) {
+//   let result = 0;
+//   let counter = 0;
+
+//   if (A.length !== 1) {
+//     for (let i = 0; i < A.length; i += 1) {
+//       for (let y = 0; y < A.length; y += 1) {
+//         if (A[i] === A[y]) {
+//           counter++;
+//         }
+//       }
+//       if (counter % 2 !== 0) {
+//         return (result = A[i]);
+//       }
+//       counter = 0;
+//     }
+//   } else {
+//     result = A[0];
+//   }
+
+//   return result;
+// }
+
+// console.log(findOdd([7, 7, 7, 8]));
+// !====================================
+// function validPhoneNumber(phoneNumber) {
+//   const number = phoneNumber.split("");
+//   if (
+//     number[0] !== "(" ||
+//     number[4] !== ")" ||
+//     number[5] !== " " ||
+//     number[9] !== "-"
+//   ) {
+//     return false;
+//   }
+//   return true;
+// }
+// console.log("(123) 456-7890".length);
+// !=====================================
+// function consonantCount(str) {
+//   const word = ["a", "e", "i", "o", "u"];
+//   return str
+//     .toLowerCase()
+//     .split("")
+//     .reduce((total, el) => {
+//       if (!word.includes(el) && str.match(/[^&$#0-9]/)) {
+//         total++;
+//       }
+//       return total;
+//     }, 0);
+// }
+// console.log(consonantCount("^&$#"));
+// ! ==================================
+//? accum("abcd") -> "A-Bb-Ccc-Dddd"
+//? accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+//? accum("cwAt") -> "C-Ww-Aaa-Tttt"
+// function accum(s) {
+//   const array = s.split("");
+//   const resultArray = [];
+
+//   for (let i = 0; i < array.length; i++) {
+//     let char = array[i];
+//     for (let y = 0; y < i; y++) {
+//       char += array[i];
+//     }
+//     resultArray.push(char);
+//   }
+//   return resultArray.join("-");
+// }
+// console.log(accum("RqaEzty"));
+// ("Z-Pp-Ggg-Llll-Nnnnn-RRRRRR-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-UUUUUUUUUUU");
+// ("Z-Pp-Ggg-Llll-Nnnnn-Rrrrrr-Xxxxxxx-Qqqqqqqq-Eeeeeeeee-Nnnnnnnnnn-Uuuuuuuuuuu");
+// ! ======================================
+// function binaryPyramid(m, n) {
+//   const array = [];
+//   for (; m <= n; m += 1) {
+//     array.push(m);
+//   }
+//   let result = 0;
+//   for (let i = 0; i < array.length; i++) {
+//     result += +array[i].toString(2);
+//   }
+//   return result.toString(2);
+// }
+// const BinaryPyramid = (m, n) => Array(n - m + 1)
+//   .fill(0)
+//   .map((_, i) => m + i)
+//   .reduce((s, n) => s + +n.toString(2), 0)
+//   .toString(2);
+
+// console.log(binaryPyramid(1, 4)); // "1111010"
+// !===================================================
+// function disemvowel(str) {
+//   return str.replace(/[aeiou]/gi, "");
+// }
+// console.log(disemvowel("This website is for losers LOL!"));
+// ! ===============================================
+// function friends(n, acc = 0) {
+//   if (n <= 2) {
+//     return acc;
+//   } else {
+//     return friends(n / 2, acc + 1);
+//   }
+// }
+// console.log(friends(5));
+// ! ================================================
+// function doubleCheck(str) {
+//   const array = [...str.toLowerCase()];
+//   return array.filter((el, idx, array) => array[idx] === array[idx + 1])
+//     .length > 0
+//     ? true
+//     : false;
+// }
+// console.log(doubleCheck("aabca"));
+// ! ================================================
+// function spinWords(string) {
+//   return string
+//     .split(" ")
+//     .map((el) => {
+//       if (el.length >= 5) {
+//         return el.split("").reverse().join("");
+//       }
+//       return el;
+//     })
+//     .join(" ");
+// }
+// console.log(spinWords("You are almost to the last test"));
+// ! ==================================================
+// function findUniq(arr) {
+//   return +arr.filter(
+//     (el, idx, array) => array.indexOf(el) === array.lastIndexOf(el)
+//   );
+// }
+// console.log(findUniq([1, 1, 2, 1, 1]));
+// ! ================================================
+// const rightButton = document.querySelector(".js-right");
+// const leftButton = document.querySelector(".js-left");
+// const container = document.querySelector(".js-container");
+
+// rightButton.addEventListener("click", toRight);
+// leftButton.addEventListener("click", toLeft);
+// let step = 0;
+// function toRight(e) {
+//   step += 15;
+//   container.style.marginLeft = `${step}px`;
+// }
+// function toLeft(e) {
+//   step -= 15;
+//   container.style.marginRight = `${step}px`;
+// }
